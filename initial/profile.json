@@ -1,3 +1,4 @@
-{"firstName":"Tom", "lastName":"Brady", "age":41, "position":"QB", "team":"Patriots"}
-{"firstName":"Arron", "lastName":"Rodgers", "age":32, "position":"QB", "team":"Packers"}
-{"firstName":"John", "lastName":"Elway", "age":50, "position":"QB", "team":"Broncos"}
+{"firstName":"John", "lastName":"Stockton", "age":32, "position":"PG", "team":"Jazz"}
+{"firstName":"Luka", "lastName":"Donik", "age":19, "position":"PF", "team":"Maveriks"}
+{"firstName":"De'Arron", "lastName":"Fox", "age":21, "position":"PG", "team":"Kings"}
+{"firstName":"Jayson", "lastName":"Taytum", "age":22, "position":"SF", "team":"Celtics"}

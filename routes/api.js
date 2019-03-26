@@ -4,11 +4,19 @@ const vertex = require('vertex360')({site_id: process.env.TURBO_APP_ID})
 const router = vertex.router()
 
 const Profile = require('../models/Profile')
+const Team = require('../models/Team')
 
 /*  This is a sample API route. */
 router.get('/profile', (req, res) => {
+	
+	let filters = req.query
+	if (req.query.age != null){
+		filters = {
+			age: {$gt: req.query.age}
+		}
+	}
 
-	Profile.find()
+	Profile.find(filters)
 	.then(profiles => {
 		res.json({
 			confirmation: 'success',
