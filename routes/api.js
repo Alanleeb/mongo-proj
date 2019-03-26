@@ -30,6 +30,22 @@ router.get('/profile', (req, res) => {
 		})
 	})
 })
+router.get('/profile/:id', (req, res) => {
+	const id = req.params.id
 
+	Profile.findById(id)
+	.then(profile => {
+		res.json({ 
+			confirmation: 'success',
+			data: profile
+	})
+})
+.catch(err => {
+	res.json({
+		confirmation: 'fail',
+		message: 'Profile ' + id + ' not found.'
+	})
+})
+})
 
 module.exports = router
