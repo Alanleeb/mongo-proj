@@ -30,6 +30,26 @@ router.get('/profile', (req, res) => {
 		})
 	})
 })
+//Non RESTful example
+router.get('/profile/update', (req,res) => {
+	 const query = req.query
+	 const profileId = query.id
+	 delete query['id']
+
+	 Profile.findByIdAndUpdate(profileId, query, {new:true})
+	 .then(profile => {
+		 res.json({
+			 confirmation: 'success',
+			 data: profile
+		 })
+	 })
+	 .catch(err => {
+		 res.json({
+			 confirmation: 'fail',
+			 message: err.message
+		 })
+	 })
+})
 router.get('/profile/:id', (req, res) => {
 	const id = req.params.id
 
@@ -47,7 +67,6 @@ router.get('/profile/:id', (req, res) => {
 	})
 })
 })
-
 router.post('/profile', (req, res) => {
 
 	Profile.create(req.body)
@@ -55,6 +74,23 @@ router.post('/profile', (req, res) => {
 		res.json({
 			confirmation: 'success',
 			data: profile
+		})
+	})
+	.catch(err => {
+		res.json({
+			confirmation: 'fail',
+			message: err.message
+		})
+	})
+})
+
+router.get('/team', (req, res) => {
+	const team = req.query.teamName
+	Team.find(team) 
+	.then(teams => {
+		res.json({
+			confirmation: 'success',
+			data: teams
 		})
 	})
 	.catch(err => {

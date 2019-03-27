@@ -7,4 +7,4 @@ const Team = new mongoose.Schema({
     conference: {type:String, trim:true, default:' '}
 })
 
-module.exports = mongoose.model("team", Team)
+module.exports = mongoose.model("Team", Team)

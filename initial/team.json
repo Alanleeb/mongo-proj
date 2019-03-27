@@ -1,4 +1,4 @@
-{"teamName":"Jazz", "cityName":"Utah", "good":true}
-{"teamName":"Maveriks", "cityName":"Dallas", "good":false}
-{"teamName":"Kings", "cityName":"Sacremento", "good":true}
-{"teamName":"Celtics", "cityName":"Boston", "good":false}
+{"teamName":"Jazz", "cityName":"Utah", "good":true, "conference":"West"}
+{"teamName":"Maveriks", "cityName":"Dallas", "good":false, "conference":"West"}
+{"teamName":"Kings", "cityName":"Sacremento", "good":true, "conference":"West"}
+{"teamName":"Celtics", "cityName":"Boston", "good":false, "conference":"East"}
