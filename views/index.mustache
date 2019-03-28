@@ -9,7 +9,7 @@
 			<h1>Welcome to Turbo</h1>
 			<hr />
 			<div style="background:#f9f9f9;border:1px solid #ddd;border-radius:3px;padding:12px">
-
+				<h2>player form</h2>
 				<form action="/api/profile" method="post">
 				<input type="text" name="firstName" placeholder="First Name"/><br />
 				<input type="text" name="lastName" placeholder="Last Name"/><br />
@@ -17,6 +17,15 @@
 				<input type="text" name="position" placeholder="Position"/><br />
 				<input type="text" name="age" placeholder="Age"/><br />
 				<input type="submit" value="Add Profile" />
+				</form>
+				<br>
+				<h2>team form</h2>
+				<form action="/api/team" method="post">
+				<input type="text" name="teamName" placeholder="Team Name"/><br />
+				<input type="text" name="cityName" placeholder="City Name"/><br />
+				<input type="text" name="good" placeholder="good or bad"/><br />
+				<input type="text" name="conference" placeholder="conference"/><br />
+				<input type="submit" value="Add Team" />
 				</form>
 			</div>
 

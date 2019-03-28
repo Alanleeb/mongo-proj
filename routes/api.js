@@ -85,8 +85,8 @@ router.post('/profile', (req, res) => {
 })
 
 router.get('/team', (req, res) => {
-	const team = req.query.teamName
-	Team.find(team) 
+
+	Team.find()
 	.then(teams => {
 		res.json({
 			confirmation: 'success',
@@ -96,8 +96,26 @@ router.get('/team', (req, res) => {
 	.catch(err => {
 		res.json({
 			confirmation: 'fail',
+			data: err.message
+		})
+	})
+	
+})
+router.post('/team', (req, res) => {
+
+	Team.create(req.body)
+	.then(team => {
+		res.json({
+			confirmation: 'success',
+			data: team
+		})
+	})
+	.catch(err => {
+		res.json({
+			confirmation: 'fail',
 			message: err.message
 		})
 	})
 })
+
 module.exports = router
