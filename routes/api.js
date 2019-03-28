@@ -30,7 +30,7 @@ router.get('/profile', (req, res) => {
 		})
 	})
 })
-//Non RESTful example
+//Non RESTful example route to update data in a database
 router.get('/profile/update', (req,res) => {
 	 const query = req.query
 	 const profileId = query.id
@@ -50,6 +50,25 @@ router.get('/profile/update', (req,res) => {
 		 })
 	 })
 })
+//example route to remove data from the database
+router.get('/profile/remove', (req, res) => {
+	const query = req.query
+
+	Profile.findByIdAndRemove(query.id)
+	.then(data => {
+		res.json({
+			confirmation: 'success',
+			data: 'Profile ' +query.id+ ' sucessfully removed'
+		})
+	})
+	.catch(err => {
+		res.json({
+			confimation: 'fail',
+			data: err.message
+		})
+	})
+})
+
 router.get('/profile/:id', (req, res) => {
 	const id = req.params.id
 
